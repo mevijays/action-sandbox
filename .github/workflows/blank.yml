@@ -20,7 +20,9 @@ jobs:
         uses: actions/checkout@v4
       - name: take value
         id: getid
-        run: echo "MYJSON=$(cat myfile.json)" >> $GITHUB_OUTPUT
+        run: |-
+          PATHFILE="myfile.json"
+          echo "MYJSON=${PATHFILE}" >> GITHUB_OUTPUT
   sdlc-run:
     needs: [ build, readjson ]
     uses: mevijays/action-sandbox/.github/workflows/reusable.yaml@main
