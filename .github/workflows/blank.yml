@@ -13,13 +13,16 @@ jobs:
   readjson:
     needs: build
     runs-on: ubuntu-latest
+    outputs:
+      MYJSON: ${{ steps.getid.outputs.MYJSON }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
       - name: take value
-        run: echo "MYJSON=$(cat myfile.json)" >> $GITHUB_ENV
+        id: getid
+        run: echo "MYJSON=$(cat myfile.json)" >> $GITHUB_OUTPUT
   sdlc-run:
     needs: [ build, readjson ]
     uses: mevijays/action-sandbox/.github/workflows/reusable.yaml@main
     with:
-       MULTIJSON: ${{ env.MYJSON }}
+       MULTIJSON: ${{ needs.readjson.outputs.MYJSON }}
