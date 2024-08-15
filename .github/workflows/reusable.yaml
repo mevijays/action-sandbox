@@ -14,4 +14,4 @@ jobs:
     name: getting value
     steps:
       - name: printing value
-        run: echo '${{ fromJSON(inputs.MULTIJSON) }}'
+        run: echo ${{ fromJSON(inputs.MULTIJSON) }}
