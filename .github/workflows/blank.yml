@@ -10,8 +10,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run a one-line script
         run: echo Hello, world!
-  sdlc-run:
+  readjson:
     needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: take value
+        run: echo "MYJSON=$(cat myfile.json)" >> $GITHUB_ENV
+  sdlc-run:
+    needs: [ build, readjson ]
     uses: mevijays/action-sandbox/.github/workflows/reusable.yaml@main
     with:
-       MULTIJSON: '{ "gitname" : "vijay"}'
+       MULTIJSON: ${{ env.MYJSON }}
