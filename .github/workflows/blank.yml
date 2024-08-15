@@ -14,4 +14,4 @@ jobs:
     needs: build
     uses: mevijays/action-sandbox/.github/workflows/reusable.yaml@main
     with:
-       MULTIJSON: '{ name : "vijay"}'
+       MULTIJSON: '{ "gitname" : "vijay"}'
