@@ -1,0 +1,17 @@
+name: reusable for call
+permissions:
+  contents: read
+  id-token: write
+on:
+  workflow_call:
+    inputs:
+      MULTIJSON:
+        type: string
+        default: ''
+jobs:
+  getjob:
+    runs-on: ubuntu-latest
+    name: getting value
+    steps:
+      - name: printing value
+        run: ${{ inputs.MULTIJSON }}
