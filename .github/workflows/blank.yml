@@ -12,6 +12,6 @@ jobs:
         run: echo Hello, world!
   sdlc-run:
     needs: build
-    uses: mevijays/action-sandbox/.github/workflows/reusable.yaml
+    uses: mevijays/action-sandbox/.github/workflows/reusable.yaml@main
     with:
        MULTIJSON: '{ name = "vijay"}'
