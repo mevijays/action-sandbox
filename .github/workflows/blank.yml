@@ -22,7 +22,8 @@ jobs:
         id: getid
         run: |-
           PATHFILE="myfile.json"
-          echo "MYJSON=${PATHFILE}" >> GITHUB_OUTPUT
+          MYJSON=$(cat $PATHFILE)
+          echo "MYJSON=$MYJSON" >> $GITHUB_OUTPUT
   sdlc-run:
     needs: [ build, readjson ]
     uses: mevijays/action-sandbox/.github/workflows/reusable.yaml@main
