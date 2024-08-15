@@ -22,7 +22,6 @@ jobs:
         id: getid
         run: |-
           PATHFILE="myfile.json"
-          MYJSON=$(cat $PATHFILE | jq -c .)
           echo "MYJSON=$MYJSON" >> $GITHUB_OUTPUT
   sdlc-run:
     needs: [ build, readjson ]
