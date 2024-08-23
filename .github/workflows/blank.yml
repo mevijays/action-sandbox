@@ -21,10 +21,10 @@ jobs:
       - name: take value
         id: getid
         run: |-
-          PATHFILE="myfile.json"
-          echo "MYJSON=$MYJSON" >> $GITHUB_OUTPUT
+          config=$(cat myfile.json)
+          echo "::set-output name=config::$config"
   sdlc-run:
     needs: [ build, readjson ]
     uses: mevijays/action-sandbox/.github/workflows/reusable.yaml@main
     with:
-       MULTIJSON: ${{ needs.readjson.outputs.MYJSON }}
+       MULTIJSON: ${{ needs.readjson.outputs.config }}
