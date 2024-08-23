@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: printing raw input
         run: echo "${{ inputs.MULTIJSON }}"
-      - name: printing value
+      - name: printing parsed value
         run: |-
-          printf "${{ fromJSON(inputs.MULTIJSON) }}"
+          echo '${{ inputs.MULTIJSON }}' | jq .
