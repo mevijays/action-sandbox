@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     name: getting value
     steps:
+      - name: printing raw input
+        run: echo "${{ inputs.MULTIJSON }}"
       - name: printing value
         run: |-
           printf "${{ fromJSON(inputs.MULTIJSON) }}"
