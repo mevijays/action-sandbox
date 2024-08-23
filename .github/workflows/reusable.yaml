@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: printing value
         run: |-
-          printf "${{ fromJSON(inputs.MULTIJSON) }}""
+          printf "${{ fromJSON(inputs.MULTIJSON) }}"
