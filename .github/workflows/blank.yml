@@ -14,7 +14,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     outputs:
-      MYJSON: ${{ steps.getid.outputs.MYJSON }}
+      MYJSON: ${{ steps.getid.outputs.config }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -27,4 +27,4 @@ jobs:
     needs: [ build, readjson ]
     uses: mevijays/action-sandbox/.github/workflows/reusable.yaml@main
     with:
-       MULTIJSON: ${{ needs.readjson.outputs.config }}
+       MULTIJSON: ${{ needs.readjson.outputs.MYJSON }}
