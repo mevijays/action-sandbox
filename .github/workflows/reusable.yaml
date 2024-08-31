@@ -10,7 +10,7 @@ on:
         default: ''
 jobs:
   getjob:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: getting value
     steps:
       - name: printing raw input
