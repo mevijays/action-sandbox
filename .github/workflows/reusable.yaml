@@ -17,4 +17,4 @@ jobs:
         run: echo "${{ inputs.MULTIJSON }}"
       - name: printing parsed value
         run: |-
-          echo '${{ inputs.MULTIJSON }}' | jq .
+          echo "##[notice] this is $(${{ inputs.MULTIJSON }} | jq .)"
