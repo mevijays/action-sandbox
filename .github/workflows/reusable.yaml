@@ -24,6 +24,6 @@ jobs:
           echo "IMAGE_NAME=docker.io/images/mevijay/nginx:$TAG" >> $GITHUB_ENV
       - name: Notice this
         run: |
-          echo "### Image name! :rocket:" >> $GITHUB_STEP_SUMMERY
-          echo "" >> $GITHUB_STEP_SUMMERY
-          echo "Image name ${env.IMAGE_NAME}" >> $GITHUB_STEP_SUMMERY
+          echo "### Image name! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Image name ${env.IMAGE_NAME}" >> $GITHUB_STEP_SUMMARY
