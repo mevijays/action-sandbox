@@ -26,4 +26,4 @@ jobs:
         run: |
           echo "### Image name! :rocket:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Image name ${env.IMAGE_NAME}" >> $GITHUB_STEP_SUMMARY
+          echo "Image name $IMAGE_NAME" >> $GITHUB_STEP_SUMMARY
