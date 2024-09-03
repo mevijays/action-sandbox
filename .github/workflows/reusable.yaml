@@ -23,4 +23,4 @@ jobs:
           TAG=$(shuf -i 1000-9999 -n 1)
           echo "IMAGE_NAME=docker.io/images/mevijay/nginx:$TAG" >> $GITHUB_ENV
       - name: Notice this
-        run: echo "##[notice] title=Image_name_is: ${{$IMAGE_NAME}}"
+        run: echo "::notice title='Image_name_is':: ${env.IMAGE_NAME}"
